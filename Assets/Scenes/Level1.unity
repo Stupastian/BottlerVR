@@ -294,8 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerLocation: {fileID: 641326221}
   bottle: {fileID: 1552683725351477209, guid: a7ea888820789044f9758463164b63f9, type: 3}
-  timer: 0.2
-  startTime: 3
+  timer: 1
+  startTime: 1
 --- !u!4 &641326221
 Transform:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641326219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.898, y: 2.002, z: -3.248}
+  m_LocalPosition: {x: 3.945, y: 1.788, z: -3.248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1236,12 +1236,12 @@ PrefabInstance:
     - target: {fileID: 5447955960843396271, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -2.316
       objectReference: {fileID: 0}
     - target: {fileID: 5447955960843396271, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.4
+      value: 19.022
       objectReference: {fileID: 0}
     - target: {fileID: 4495274129868384639, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
@@ -1261,7 +1261,37 @@ PrefabInstance:
     - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_Size.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434521855134891692, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 7704793510680854867, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
@@ -1309,7 +1339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   belt: {fileID: 1961099080374499199}
   endpoint: {fileID: 1633102022}
-  speed: 0.2
+  speed: 1
 --- !u!136 &2125208895104029934
 CapsuleCollider:
   m_ObjectHideFlags: 0
