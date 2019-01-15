@@ -16,6 +16,13 @@ public class DeSpawner : MonoBehaviour
     {
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "bottle")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 
 }
 //}
