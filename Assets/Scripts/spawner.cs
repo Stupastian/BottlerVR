@@ -21,7 +21,7 @@ public class spawner : MonoBehaviour
 
     void SpawnBottle()
     {
-        Instantiate(bottle, spawnerLocation.position, spawnerLocation.rotation);
+        GameObject newBottle = Instantiate(bottle, spawnerLocation.position, spawnerLocation.rotation);
         
     }
 }

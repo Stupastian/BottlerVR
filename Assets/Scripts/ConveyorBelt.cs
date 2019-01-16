@@ -6,12 +6,14 @@ public class ConveyorBelt : MonoBehaviour
 {
     public GameObject belt;
     public Transform endpoint;
-    public float speed;
+    [SerializeField] public float speed = 10;
+    [SerializeField] public bool beltRunning = true;
 
 
-    public void OnTriggerStay(Collider other)
+    public void OnCollisionStay(Collision collision)
     {
-        other.transform.position = Vector3.MoveTowards(other.transform.position, endpoint.position, speed * Time.deltaTime);
+        float beltVelocity = speed * Time.deltaTime;
+        collision.transform.position = Vector3.MoveTowards(collision.transform.position, endpoint.position, speed * Time.deltaTime);
     }
 
 }

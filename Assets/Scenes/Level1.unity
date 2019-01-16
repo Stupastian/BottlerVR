@@ -193,6 +193,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1961099080374499197}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &348008613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4495274129868384639, guid: fdadaa44a4462ac4795e1c6453d823c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1961099080374499197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &348008614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerLocation: {fileID: 641326221}
   bottle: {fileID: 1098212104}
-  timer: 1
+  timer: 3
   startTime: 1
 --- !u!4 &641326221
 Transform:
@@ -264,98 +270,6 @@ Transform:
   m_Father: {fileID: 61162445}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &642228369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 642228373}
-  - component: {fileID: 642228372}
-  - component: {fileID: 642228371}
-  - component: {fileID: 642228370}
-  m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &642228370
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642228369}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!23 &642228371
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642228369}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: bc50274affe620a4d9aace337daec502, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &642228372
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642228369}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &642228373
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642228369}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.557, y: 3.791, z: -6.161}
-  m_LocalScale: {x: 0.04, y: 0.005, z: 0.04}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &762551317
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,10 +281,10 @@ GameObject:
   - component: {fileID: 762551318}
   - component: {fileID: 762551321}
   - component: {fileID: 762551320}
-  - component: {fileID: 762551319}
   - component: {fileID: 762551322}
+  - component: {fileID: 762551319}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: CapMaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,14 +298,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762551317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.49, y: 19.334, z: 12.209}
-  m_LocalScale: {x: 0.8357669, y: 0.40896, z: 1.0328221}
+  m_LocalPosition: {x: 23.53, y: 18.3, z: 12.27}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2138112446}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &762551319
-CapsuleCollider:
+--- !u!64 &762551319
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -399,11 +313,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 762551317}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &762551320
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -461,9 +375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39806982dc6003e40bfdf417b2861240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottleCap: {fileID: 642228369}
+  bottleCap: {fileID: 2646362822554605786, guid: f4bff5b0a69381542b51c1fbb2963341,
+    type: 3}
   capPosition: {x: 0, y: 0, z: 0}
-  capRotation: {x: 0, y: 0, z: 0}
+  capRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1098212103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -514,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 1552683725351477210, guid: a7ea888820789044f9758463164b63f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1552683725351477210, guid: a7ea888820789044f9758463164b63f9,
         type: 3}
@@ -1708,7 +1623,12 @@ PrefabInstance:
     - target: {fileID: 5447955960843396271, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.022
+      value: 19.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447955960843396271, guid: fdadaa44a4462ac4795e1c6453d823c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.8562
       objectReference: {fileID: 0}
     - target: {fileID: 4495274129868384639, guid: fdadaa44a4462ac4795e1c6453d823c2,
         type: 3}
@@ -1805,8 +1725,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   belt: {fileID: 1961099080374499199}
-  endpoint: {fileID: 1633102022}
+  endpoint: {fileID: 348008613}
   speed: 1
+  beltRunning: 1
 --- !u!136 &2125208895104029934
 CapsuleCollider:
   m_ObjectHideFlags: 0
