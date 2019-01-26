@@ -8,11 +8,11 @@ public class ObjectGrabber : MonoBehaviour
     public Transform grabObject;
     public bool holding;
 
-    public void GrabAction(Transform grabObject)
+    public void GrabActionTake(Transform grabObject)
     {
-        holding = !holding;
-        if (holding)
-        {
+        //holding = true;
+        //if (holding)
+        //{
             grabObject.SetParent(this.gameObject.transform);
             grabObject.GetComponent<Collider>().enabled = false;
             if (grabObject.GetComponent<Rigidbody>())
@@ -21,9 +21,11 @@ public class ObjectGrabber : MonoBehaviour
                 grabObject.GetComponent<Rigidbody>().useGravity = false;
 
             }
-        }
-        else
-        {
+        //}
+        Debug.Log("A grab taking action occured");
+    }
+    public void GrabActionRelease(Transform grabObject)
+    {
             if (grabObject.GetComponent<Rigidbody>())
             {
                 grabObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -32,8 +34,8 @@ public class ObjectGrabber : MonoBehaviour
             grabObject.GetComponent<Collider>().enabled = true;
             grabObject.SetParent(null);
             grabObject = null;
-        }
-        Debug.Log("A grab action occured");
+            holding = false;
+        Debug.Log("A grab release action occured");
     }
 
     // Start is called before the first frame update

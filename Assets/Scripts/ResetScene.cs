@@ -40,7 +40,7 @@ public class ResetScene : MonoBehaviour
             SceneReset();
         }
         // Tässä käytetään ohjainta, laitoin ensin tähän pelkästään tuon funktiokutsun, mutta sittemmin siirsin sen tuonne eventtien puolelle. Sillä tätä voi käyttää muihinkin nappeihin.
-        if (pointerEnter && Input.GetButton("Fire3"))
+        if (pointerEnter && Input.GetButton("Fire1"))
         {
             ExecuteEvents.Execute(this.gameObject.transform.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
             //SceneReset();
