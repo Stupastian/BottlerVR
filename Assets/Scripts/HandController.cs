@@ -13,15 +13,16 @@ public class HandController : MonoBehaviour
     public void CreateCandidate(Transform candidate)
     {
         grabObject = candidate;
+        Debug.Log("A grab object candidate");
     }
 
     // Start is called before the first frame update
     void Start() {
         if (Controller == XRNode.LeftHand)   {
-            grabButton = "Fire1";
+            grabButton = "Fire2";
         }
             if (Controller == XRNode.RightHand)  {
-                grabButton = "Fire1";
+                grabButton = "Fire3";
             }
 
         }
