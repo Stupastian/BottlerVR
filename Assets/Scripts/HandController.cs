@@ -17,15 +17,18 @@ public class HandController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start() {
-        if (Controller == XRNode.LeftHand)   {
+    void Start()
+    {
+        if (Controller == XRNode.LeftHand)
+        {
             grabButton = "Fire2";
         }
-            if (Controller == XRNode.RightHand)  {
-                grabButton = "Fire3";
-            }
-
+        if (Controller == XRNode.RightHand)
+        {
+            grabButton = "Fire3";
         }
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,7 +36,8 @@ public class HandController : MonoBehaviour
         transform.localPosition = InputTracking.GetLocalPosition(Controller);
         transform.localRotation = InputTracking.GetLocalRotation(Controller);
 
-        if (grabObject != null && Input.GetButton(grabButton))   {
+        if (grabObject != null && Input.GetButton(grabButton))
+        {
             og.GrabAction(grabObject);
         }
         if (og.holding == false)
