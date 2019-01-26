@@ -40,7 +40,7 @@ public class HandController : MonoBehaviour
         {
             og.GrabActionTake(grabObject);
         }
-        if (!Input.GetButton(grabButton))
+        if (grabObject != null && !Input.GetButton(grabButton))
         {
             og.GrabActionRelease(grabObject);
             grabObject = null;

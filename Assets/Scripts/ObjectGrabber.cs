@@ -37,16 +37,4 @@ public class ObjectGrabber : MonoBehaviour
             holding = false;
         Debug.Log("A grab release action occured");
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

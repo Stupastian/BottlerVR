@@ -15,5 +15,9 @@ public class ConveyorBelt : MonoBehaviour
         float beltVelocity = speed * Time.deltaTime;
         collision.transform.position = Vector3.MoveTowards(collision.transform.position, endpoint.position, speed * Time.deltaTime);
     }
+    //public void OnCollisionExit(Collision collision)
+    //{
+    //    Debug.Log("No more collision" + collision.collider.name);
+    //}
 
 }
