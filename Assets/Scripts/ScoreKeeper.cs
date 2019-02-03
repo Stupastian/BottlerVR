@@ -27,6 +27,16 @@ public class ScoreKeeper : MonoBehaviour
         {
             loser.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.S)) //This is cheat
+        {
+            score += 1;
+            scoreText.text = "Score: " + score;
+            if (score >= winCondition)
+            {
+                winner.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
