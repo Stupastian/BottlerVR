@@ -11,7 +11,7 @@ public class SimpleRaycast : MonoBehaviour
     {
         RaycastHit hit;
         // Rayn pituus eli ns. reach on tuo viimeinen numero 0.1f eli 0.1 metriä
-        if (Physics.Raycast(this.gameObject.transform.position, this.gameObject.transform.TransformDirection(Vector3.forward), out hit, 100f))
+        if (Physics.Raycast(this.gameObject.transform.position, this.gameObject.transform.TransformDirection(Vector3.forward), out hit, 0.1f))
         {
             Debug.DrawRay(this.gameObject.transform.position, this.gameObject.transform.TransformDirection(Vector3.forward) * 50, Color.green);
             Debug.Log("Found an object named " + hit.transform.gameObject.name);

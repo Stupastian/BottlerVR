@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552683725351477210}
   - component: {fileID: 7867164659272483430}
+  - component: {fileID: 3901739531522775662}
   m_Layer: 0
   m_Name: FixedBottle
   m_TagString: bottle
@@ -48,6 +49,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3901739531522775662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552683725351477209}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.2700348, z: 0.0849185}
+  m_Center: {x: 0, y: -0.1369983, z: -0.0003631115}
 --- !u!65 &3640176043145486904
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -7,8 +7,15 @@ public class HandController : MonoBehaviour
 {
     public XRNode Controller;
     public Transform grabObject;
-    private string grabButton;
+    private string grabButtonRight;
+    private string grabButtonLeft;
     public ObjectGrabber og;
+    //public Quaternion controllerRotation;
+    private Vector3 ControllerPosition1;
+    private Vector3 ControllerPosition2;
+    private Vector3 ControllerVelocity;
+    private bool pressed = false;
+    private bool velocity;
 
     public void CreateCandidate(Transform candidate)
     {
@@ -21,11 +28,13 @@ public class HandController : MonoBehaviour
     {
         if (Controller == XRNode.LeftHand)
         {
-            grabButton = "Fire2";
+            grabButtonLeft = "Fire2";
+            Debug.Log("Left Controller Activated:");
         }
         if (Controller == XRNode.RightHand)
         {
-            grabButton = "Fire3";
+            grabButtonRight = "Fire3";
+            Debug.Log("Right Controller Activated:");
         }
 
     }
@@ -33,17 +42,30 @@ public class HandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Following the controllers in scene
         transform.localPosition = InputTracking.GetLocalPosition(Controller);
         transform.localRotation = InputTracking.GetLocalRotation(Controller);
+        
+        //For calculating velocity for throwing we need the location of the controller
+        //controllerRotation = InputTracking.GetLocalRotation(Controller);
+        ControllerPosition2 = ControllerPosition1;
+        ControllerPosition1 = InputTracking.GetLocalPosition(Controller);
+        ControllerVelocity = ControllerPosition1 - ControllerPosition2;
+        Debug.Log("Controller Velocity: " + ControllerVelocity);
 
-        if (grabObject != null && Input.GetButton(grabButton))
+        //For grabbing object we need to have an object and the right button (depending on the controller)
+        if (grabObject != null && ((Controller == XRNode.RightHand && Input.GetButton(grabButtonRight)) || (Controller == XRNode.LeftHand && Input.GetButton(grabButtonLeft))))
         {
             og.GrabActionTake(grabObject);
+            pressed = true;
         }
-        if (grabObject != null && !Input.GetButton(grabButton))
+        //For releasing the object and throwing it we need to have an object and release the appropriate button
+        if (pressed && grabObject != null && ((Controller == XRNode.RightHand && !Input.GetButton(grabButtonRight)) || (Controller == XRNode.LeftHand && !Input.GetButton(grabButtonLeft))))
         {
             og.GrabActionRelease(grabObject);
+            og.GrabActionThrow(grabObject, ControllerVelocity);
             grabObject = null;
+            pressed = false;
         }
     }
 }
