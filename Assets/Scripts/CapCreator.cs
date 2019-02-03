@@ -6,11 +6,12 @@ public class CapCreator : MonoBehaviour
 {
     public GameObject bottleCap;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collision collision)
     {
         if(collision.gameObject.tag == "bottle")
         {
             GameObject newBottlecap = Instantiate(bottleCap, collision.gameObject.transform.position, collision.gameObject.transform.rotation, collision.gameObject.transform);
+            collision.gameObject.tag = "BottleWithCap";
         }
     }
     
