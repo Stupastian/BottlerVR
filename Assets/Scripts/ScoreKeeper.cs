@@ -39,9 +39,9 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "BottleWithCap")
+        if (other.tag == "BottleWithCap")
         {
             score += 1;
             scoreText.text = "Score: " + score;
@@ -49,7 +49,7 @@ public class ScoreKeeper : MonoBehaviour
             {
                 winner.SetActive(true);
             }
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
