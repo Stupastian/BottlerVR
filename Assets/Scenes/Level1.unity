@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &3779560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1339051206258835348, guid: 2fcacbe7aea53254abd67aa35fcd6006,
+    type: 3}
+  m_PrefabInstance: {fileID: 1339051205705217685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea003ca6b4eccfc42b3b2b9d9fce34a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &31244851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1038,7 @@ GameObject:
   - component: {fileID: 762551320}
   - component: {fileID: 762551322}
   - component: {fileID: 762551319}
+  - component: {fileID: 762551323}
   m_Layer: 0
   m_Name: CapMaker
   m_TagString: Untagged
@@ -1120,6 +1133,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottleCap: {fileID: 7884555372178991037, guid: bb9b8956bfbaa024ebc2a9a19669bb79,
     type: 3}
+--- !u!54 &762551323
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762551317}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &847649744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1486,17 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 608121604}
+          m_MethodName: CreateCandidate
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1098212107}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3779560}
           m_MethodName: CreateCandidate
           m_Mode: 2
           m_Arguments:
@@ -2723,6 +2763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339051206738618198, guid: 2fcacbe7aea53254abd67aa35fcd6006,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1361588295093024188, guid: 2fcacbe7aea53254abd67aa35fcd6006, type: 3}
