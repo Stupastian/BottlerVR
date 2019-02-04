@@ -18,7 +18,7 @@ public class DeSpawner : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "bottle")
+        if(collision.gameObject.tag == "bottle" || collision.gameObject.tag == "BottleWithCap")
         {
             Destroy(collision.gameObject);
         }
