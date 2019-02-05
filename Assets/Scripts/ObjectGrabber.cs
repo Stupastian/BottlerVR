@@ -13,12 +13,12 @@ public class ObjectGrabber : MonoBehaviour
         rigidBody = grabObject.GetComponent<Rigidbody>();
 
         grabObject.SetParent(this.gameObject.transform);
-        grabObject.GetComponent<Collider>().enabled = false;
             if (rigidBody)
             {
                 rigidBody.isKinematic = true;
                 rigidBody.useGravity = false;
-            }
+                rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+        }
         
     }
     public void GrabActionRelease(Transform grabObject)
@@ -29,8 +29,8 @@ public class ObjectGrabber : MonoBehaviour
             {
                 rigidBody.isKinematic = false;
                 rigidBody.useGravity = true;
-            }
-        grabObject.GetComponent<Collider>().enabled = true;
+                rigidBody.constraints = RigidbodyConstraints.None;
+        }
         grabObject.SetParent(null);
         holding = false;
         Debug.Log("A grab release action occured");
