@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
-    public GameObject belt;
+    
     public Transform endpoint;
     Renderer renderere;
     [SerializeField] public float speed = 1f;
