@@ -35,3 +35,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+/Assets/Blender/simplestCubeAnimation.fbx.meta
+/Assets/Blender/simplestCubeAnimation.fbx

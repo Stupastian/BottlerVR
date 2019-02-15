@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class HandAnimation : MonoBehaviour
 {
-
+    public GameObject hand;
     Animator handAnimator;
-    [SerializeField] ObjectGrabber grabber;
+    ObjectGrabber grabber;
     // Start is called before the first frame update
     void Start()
     {
         handAnimator = GetComponentInChildren<Animator>();
+        grabber = hand.GetComponent<ObjectGrabber>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class HandAnimation : MonoBehaviour
     {
         if (grabber.holding)
         {
-            if (handAnimator.GetBool("IsGrabbing"))
+            if (!handAnimator.GetBool("IsGrabbing"))
             {
                 Debug.Log("Animate Grab");
                 handAnimator.SetBool("IsGrabbing", true);
