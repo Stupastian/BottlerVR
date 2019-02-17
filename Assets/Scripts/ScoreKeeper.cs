@@ -11,18 +11,26 @@ public class ScoreKeeper : MonoBehaviour
     public GameObject winner;
     public GameObject loser;
     public Text scoreText;
+    public Text timeLeft;
 
-    public float countDown = 1000f; // how long the game runs in seconds
+    public float countDown = 120f; // how long the game runs in seconds
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        winner.SetActive(false);
+        loser.SetActive(false);
     }
 
     private void Update()
     {
-        countDown -= Time.deltaTime;
+        if (countDown > 0f && score < winCondition)
+        {
+            countDown -= Time.deltaTime;
+        }
+
+        timeLeft.text = "Vuoroa jäljellä: " + Mathf.RoundToInt(countDown) + " sec";
+
         if (countDown <= 0f && score < winCondition)
         {
             loser.SetActive(true);
@@ -31,7 +39,7 @@ public class ScoreKeeper : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S)) //This is cheat
         {
             score += 1;
-            scoreText.text = "Score: " + score;
+            scoreText.text = "Korkitettu: " + score;
             if (score >= winCondition)
             {
                 winner.SetActive(true);
