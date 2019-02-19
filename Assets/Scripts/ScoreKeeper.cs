@@ -40,7 +40,7 @@ public class ScoreKeeper : MonoBehaviour
         {
             score += 1;
             scoreText.text = "Korkitettu: " + score;
-            if (score >= winCondition)
+            if (score >= winCondition && countDown > 0f)
             {
                 winner.SetActive(true);
             }
@@ -53,7 +53,7 @@ public class ScoreKeeper : MonoBehaviour
         {
             score += 1;
             scoreText.text = "Score: " + score;
-            if (score >= winCondition)
+            if (score >= winCondition && countDown > 0f)
             {
                 winner.SetActive(true);
             }

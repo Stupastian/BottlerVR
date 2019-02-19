@@ -51,7 +51,7 @@ public class HandController : MonoBehaviour
         ControllerPosition2 = ControllerPosition1;
         ControllerPosition1 = InputTracking.GetLocalPosition(Controller);
         ControllerVelocity = ControllerPosition1 - ControllerPosition2;
-        Debug.Log("Controller Velocity: " + ControllerVelocity);
+        //Debug.Log("Controller Velocity: " + ControllerVelocity);
 
         //For grabbing object we need to have an object and the right button (depending on the controller)
         if (grabObject != null && ((Controller == XRNode.RightHand && Input.GetButton(grabButtonRight)) || (Controller == XRNode.LeftHand && Input.GetButton(grabButtonLeft))))

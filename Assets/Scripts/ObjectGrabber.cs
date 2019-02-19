@@ -42,8 +42,13 @@ public class ObjectGrabber : MonoBehaviour
         rigidBody.velocity = velocity * 100;
         grabObject = null;
 
-        Debug.Log("A throw action occured");
-        Debug.Log("RigidBody Velocity: " + rigidBody.velocity);
+        //Debug.Log("A throw action occured");
+        //Debug.Log("RigidBody Velocity: " + rigidBody.velocity);
+    }
+
+    void Update()
+    {
+        Debug.Log("Holding: " + holding);
     }
 
     }
