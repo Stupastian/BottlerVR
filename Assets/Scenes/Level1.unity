@@ -1132,6 +1132,93 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000002, y: 2, z: 1.9999996}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &694440013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694440014}
+  - component: {fileID: 694440018}
+  - component: {fileID: 694440017}
+  - component: {fileID: 694440016}
+  - component: {fileID: 694440015}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &694440014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694440013}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0029}
+  m_LocalScale: {x: 0.015, y: 0.001, z: 0.015}
+  m_Children: []
+  m_Father: {fileID: 1231085396}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &694440015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694440013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5005f0ad4ca6f44957aa823003646d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  winCondition: 10
+  winner: {fileID: 1246346631}
+  loser: {fileID: 1603301359}
+  scoreText: {fileID: 1428277982}
+  timeLeft: {fileID: 1349911672}
+  countDown: 120
+--- !u!114 &694440016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694440013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697c8813972c01d45922c4e2264061d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &694440017
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694440013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &694440018
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694440013}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &717729498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2168,6 +2255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreBin
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: da4a674783d7a8244961322a1d914bc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: da4a674783d7a8244961322a1d914bc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.06
@@ -2216,51 +2307,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6fd940db5158aef44a6b9a1c1345fd26, type: 2}
+    - target: {fileID: 2300002, guid: da4a674783d7a8244961322a1d914bc5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4a674783d7a8244961322a1d914bc5, type: 3}
---- !u!1 &1231085395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: da4a674783d7a8244961322a1d914bc5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1231085394}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1231085396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: da4a674783d7a8244961322a1d914bc5,
     type: 3}
   m_PrefabInstance: {fileID: 1231085394}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1231085397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231085395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697c8813972c01d45922c4e2264061d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1231085398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231085395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c5005f0ad4ca6f44957aa823003646d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  winCondition: 10
-  winner: {fileID: 1246346631}
-  loser: {fileID: 1603301359}
-  scoreText: {fileID: 1428277982}
-  timeLeft: {fileID: 1349911672}
-  countDown: 120
 --- !u!1 &1245568661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,7 +3179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1644505005
 Transform:
   m_ObjectHideFlags: 0
