@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bottle
   - BottleWithCap
+  - Manuel
   layers:
   - Default
   - TransparentFX
