@@ -30,6 +30,15 @@ ModelImporter:
     100048: Upper_Arm_R_001
     100050: Upper_Leg_L
     100052: Upper_Leg_R_001
+    100054: Fingers01_R
+    100056: Fingers02_R
+    100058: Foot_R
+    100060: Leg_Control_R
+    100062: Lower_Arm_R
+    100064: Lower_Leg_R
+    100066: Toes_R
+    100068: Upper_Arm_R
+    100070: Upper_Leg_R
     400000: //RootNode
     400002: Armature
     400004: Chest
@@ -57,6 +66,15 @@ ModelImporter:
     400048: Upper_Arm_R_001
     400050: Upper_Leg_L
     400052: Upper_Leg_R_001
+    400054: Fingers01_R
+    400056: Fingers02_R
+    400058: Foot_R
+    400060: Leg_Control_R
+    400062: Lower_Arm_R
+    400064: Lower_Leg_R
+    400066: Toes_R
+    400068: Upper_Arm_R
+    400070: Upper_Leg_R
     2100000: unnamed
     2100002: None__UV
     2300000: //RootNode
@@ -65,6 +83,7 @@ ModelImporter:
     3300002: Cube
     4300000: Cube
     7400000: Default Take
+    7400002: Walk_Blocking
     9500000: //RootNode
     13700000: Cube
   externalObjects: {}
@@ -94,7 +113,63 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk_Blocking
+      takeName: Walk_Blocking
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
