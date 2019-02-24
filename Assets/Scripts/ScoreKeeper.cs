@@ -49,16 +49,41 @@ public class ScoreKeeper : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "BottleWithCap")
+        UpdateScoreValue(other);
+        
+
+        Destroy(other.gameObject);
+
+        CheckWinCondition();
+    }
+
+    private void CheckWinCondition()
+    {
+        if (score >= winCondition && countDown > 0f)
         {
-            score += 1;
-            scoreText.text = "Score: " + score;
-            if (score >= winCondition && countDown > 0f)
-            {
-                winner.SetActive(true);
-            }
-            Destroy(other.gameObject);
+            winner.SetActive(true);
         }
     }
 
+    private void UpdateScoreValue(Collider other)
+    {
+        if (other.tag == "BottleWithCap")
+        {
+            score += 1;
+        }
+        else if (other.tag == "Bottle")
+        {
+            score -= 1;
+        }
+        else if (other.tag == "ManuelWithSombrero")
+        {
+            score += 3;
+        }
+        else if (other.tag == "Manuel")
+        {
+            score -= 5;
+        }
+        //Update score textvalue visible to player
+        scoreText.text = "Score: " + score;
+    }
 }

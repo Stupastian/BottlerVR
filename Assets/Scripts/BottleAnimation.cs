@@ -20,13 +20,14 @@ public class BottleAnimation : MonoBehaviour
     {
         triggerDistance = Vector3.Distance(player.transform.position, target.transform.position);
         Debug.Log("trggerDistance = " +triggerDistance);
+        Debug.Log("animator bool: " +bottleAnimator.GetBool("PlayerTooClose"));
         if (triggerDistance < triggerActivationDistance)
         {
             bottleAnimator.SetBool("PlayerTooClose", true);
         }
         if (triggerDistance > triggerDeActiovationDistance)
         {
-            bottleAnimator.SetBool("PlayerTooClose", true);
+            bottleAnimator.SetBool("PlayerTooClose", false);
         }
 
     }

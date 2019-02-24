@@ -5,6 +5,7 @@ using UnityEngine;
 public class CapCreator : MonoBehaviour
 {
     public GameObject bottleCap;
+    public GameObject sombrero;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,6 +14,13 @@ public class CapCreator : MonoBehaviour
             GameObject newBottlecap = Instantiate(bottleCap, collision.gameObject.transform.position, collision.gameObject.transform.rotation, collision.gameObject.transform);
             collision.gameObject.tag = "BottleWithCap";
         }
+        else if (collision.gameObject.tag == "Manuel")
+        {
+            GameObject newBottlecap = Instantiate(sombrero, collision.gameObject.transform.position, collision.gameObject.transform.rotation, collision.gameObject.transform);
+            collision.gameObject.tag = "ManuelWithSombrero";
+        }
+
+
     }
     
 
