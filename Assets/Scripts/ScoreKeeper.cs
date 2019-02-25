@@ -71,7 +71,7 @@ public class ScoreKeeper : MonoBehaviour
         {
             score += 1;
         }
-        else if (other.tag == "Bottle")
+        else if (other.tag == "bottle")
         {
             score -= 1;
         }
@@ -84,6 +84,6 @@ public class ScoreKeeper : MonoBehaviour
             score -= 5;
         }
         //Update score textvalue visible to player
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Korkitettu: " + score;
     }
 }

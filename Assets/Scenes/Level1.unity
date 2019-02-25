@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1157,7 +1157,6 @@ GameObject:
   - component: {fileID: 694440014}
   - component: {fileID: 694440018}
   - component: {fileID: 694440017}
-  - component: {fileID: 694440016}
   - component: {fileID: 694440015}
   m_Layer: 0
   m_Name: Despawner
@@ -1199,18 +1198,6 @@ MonoBehaviour:
   scoreText: {fileID: 1428277982}
   timeLeft: {fileID: 1349911672}
   countDown: 120
---- !u!114 &694440016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694440013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697c8813972c01d45922c4e2264061d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &694440017
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1219,10 +1206,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694440013}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &694440018
