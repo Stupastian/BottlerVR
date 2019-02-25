@@ -47,7 +47,7 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         UpdateScoreValue(other);
         
@@ -65,25 +65,25 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private void UpdateScoreValue(Collider other)
+    private void UpdateScoreValue(Collision other)
     {
-        if (other.tag == "BottleWithCap")
+        if (other.gameObject.tag == "BottleWithCap")
         {
             score += 1;
         }
-        else if (other.tag == "Bottle")
+        else if (other.gameObject.tag == "Bottle")
         {
             score -= 1;
         }
-        else if (other.tag == "ManuelWithSombrero")
+        else if (other.gameObject.tag == "ManuelWithSombrero")
         {
             score += 3;
         }
-        else if (other.tag == "Manuel")
+        else if (other.gameObject.tag == "Manuel")
         {
             score -= 5;
         }
         //Update score textvalue visible to player
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Korkitettu: " + score;
     }
 }
