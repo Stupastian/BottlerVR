@@ -12,6 +12,7 @@ public class ScoreKeeper : MonoBehaviour
     public GameObject loser;
     public Text scoreText;
     public Text timeLeft;
+    public BossMove boss;
 
     public float countDown = 120f; // how long the game runs in seconds
 
@@ -85,5 +86,11 @@ public class ScoreKeeper : MonoBehaviour
         }
         //Update score textvalue visible to player
         scoreText.text = "Korkitettu: " + score;
+
+    }
+
+    public int getScore()
+    {
+        return score;
     }
 }
