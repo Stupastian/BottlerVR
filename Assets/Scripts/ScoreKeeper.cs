@@ -13,6 +13,17 @@ public class ScoreKeeper : MonoBehaviour
     public Text scoreText;
     public Text timeLeft;
     public BossMove boss;
+    bool musicChanged = false;
+    bool victory = false;
+
+    public AudioSource scoreSource;
+    public AudioSource musicSource;
+
+    public AudioClip scoreClip;
+
+    public AudioClip musicClip1;
+    public AudioClip musicClip2;
+    public AudioClip musicClip3;
 
     public float countDown = 120f; // how long the game runs in seconds
 
@@ -21,10 +32,21 @@ public class ScoreKeeper : MonoBehaviour
     {
         winner.SetActive(false);
         loser.SetActive(false);
+        scoreSource.clip = scoreClip;
+        musicSource.clip = musicClip1;
+        musicSource.Play();
     }
 
     private void Update()
     {
+        if (countDown < 30f && musicChanged == false)
+        {
+            musicSource.Stop();
+            musicSource.clip = musicClip2;
+            musicSource.Play();
+            musicChanged = true;
+        }
+
         if (countDown > 0f && score < winCondition)
         {
             countDown -= Time.deltaTime;
@@ -35,25 +57,30 @@ public class ScoreKeeper : MonoBehaviour
         if (countDown <= 0f && score < winCondition)
         {
             loser.SetActive(true);
+            musicSource.Stop();
         }
 
         if (Input.GetKeyDown(KeyCode.S)) //This is cheat
         {
             score += 1;
             scoreText.text = "Korkitettu: " + score;
-            if (score >= winCondition && countDown > 0f)
+            scoreSource.Play();
+            if (score >= winCondition && countDown > 0f && victory == false)
             {
                 winner.SetActive(true);
+                musicSource.Stop();
+                musicSource.clip = musicClip3;
+                musicSource.Play();
+                victory = true;
             }
-            if (score == 5)
+            if (score == 3)
             {
                 boss.Reset();
                 boss.GetComponent<BossMove>().enabled = true;
             }
-            if (score == 10)
+            if (score == 7)
             {
                 boss.Reset();
-                Debug.Log("ukon toinen käynnistys");
                 boss.GetComponent<BossMove>().enabled = true;
             }
         }
@@ -71,9 +98,13 @@ public class ScoreKeeper : MonoBehaviour
 
     private void CheckWinCondition()
     {
-        if (score >= winCondition && countDown > 0f)
+        if (score >= winCondition && countDown > 0f && victory == false)
         {
             winner.SetActive(true);
+            musicSource.Stop();
+            musicSource.clip = musicClip3;
+            musicSource.Play();
+            victory = true;
         }
     }
 
@@ -82,6 +113,7 @@ public class ScoreKeeper : MonoBehaviour
         if (other.tag == "BottleWithCap")
         {
             score += 1;
+            scoreSource.Play();
         }
         else if (other.tag == "bottle")
         {
@@ -90,6 +122,7 @@ public class ScoreKeeper : MonoBehaviour
         else if (other.tag == "ManuelWithSombrero")
         {
             score += 3;
+            scoreSource.Play();
         }
         else if (other.tag == "Manuel")
         {
@@ -98,12 +131,12 @@ public class ScoreKeeper : MonoBehaviour
         //Update score textvalue visible to player
         scoreText.text = "Korkitettu: " + score;
 
-        if (score == 5)
+        if (score == 3)
         {
             boss.Reset();
             boss.GetComponent<BossMove>().enabled = true;
         }
-        if (score == 10)
+        if (score == 7)
         {
             boss.Reset();
             Debug.Log("ukon toinen käynnistys");

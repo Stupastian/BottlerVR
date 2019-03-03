@@ -10,10 +10,15 @@ public class BottleAnimation : MonoBehaviour
     public GameObject target;
     public float triggerActivationDistance;
     public float triggerDeActiovationDistance;
+    public AudioSource manuelSource;
+    public AudioClip manuelClip;
+    bool isPlaying = false;
+
     // Start is called before the first frame update
     void Start()
     {
         bottleAnimator = GetComponentInChildren<Animator>();
+        manuelSource.clip = manuelClip;
     }
 
     private void Update()
@@ -24,10 +29,20 @@ public class BottleAnimation : MonoBehaviour
         if (triggerDistance < triggerActivationDistance)
         {
             bottleAnimator.SetBool("PlayerTooClose", true);
+            if (isPlaying == false)
+            {
+                manuelSource.Play();
+                isPlaying = true;
+            }
         }
         if (triggerDistance > triggerDeActiovationDistance)
         {
             bottleAnimator.SetBool("PlayerTooClose", false);
+            if (isPlaying == true)
+            {
+                manuelSource.Stop();
+                isPlaying = false;
+            }
         }
 
     }

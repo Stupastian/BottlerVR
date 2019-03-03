@@ -6,11 +6,14 @@ public class BossMove : MonoBehaviour
 
 {
 
+    public AudioSource bossSource;
+    public AudioClip bossClip;
     public float speed = 3f;
     public float countDown1 = 7f;// how long the game boss walks in seconds
     public float countDown2 = 7f;
     public bool turned = false;
     public bool done = false;
+
 
     public Animator anim;
 
@@ -23,29 +26,14 @@ public class BossMove : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.Play("Walk_Blocking");
         BossTurn(90);
+        bossSource.clip = bossClip;
+        bossSource.Play();
+
     }
-
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    //public float speed = 3f;
-    //    countDown1 = 7f;// how long the game boss walks in seconds
-    //    countDown2 = 7f;
-    //    turned = false;
-    //    done = false;
-
-    ////transform.Rotate
-    //anim = GetComponent<Animator>();
-    //    anim.Play("Walk_Blocking");
-    //    BossTurn(90);
-
-    //}   
 
     // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(0, speed, 0);
-        //Debug.Log("Aika kävelylle: "+Time.deltaTime);
 
         if (countDown1 > 0f )
         {
