@@ -45,6 +45,17 @@ public class ScoreKeeper : MonoBehaviour
             {
                 winner.SetActive(true);
             }
+            if (score == 5)
+            {
+                boss.Reset();
+                boss.GetComponent<BossMove>().enabled = true;
+            }
+            if (score == 10)
+            {
+                boss.Reset();
+                Debug.Log("ukon toinen käynnistys");
+                boss.GetComponent<BossMove>().enabled = true;
+            }
         }
     }
 
@@ -87,6 +98,17 @@ public class ScoreKeeper : MonoBehaviour
         //Update score textvalue visible to player
         scoreText.text = "Korkitettu: " + score;
 
+        if (score == 5)
+        {
+            boss.Reset();
+            boss.GetComponent<BossMove>().enabled = true;
+        }
+        if (score == 10)
+        {
+            boss.Reset();
+            Debug.Log("ukon toinen käynnistys");
+            boss.GetComponent<BossMove>().enabled = true;
+        }
     }
 
     public int getScore()
